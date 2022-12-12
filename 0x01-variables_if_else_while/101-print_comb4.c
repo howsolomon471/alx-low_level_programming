@@ -1,36 +1,40 @@
-#include <stdio.h> 
- /** 
-  * main - Prints all possible combinations of 
-  * single-digit numbers 
-  * Return: Always 0 
-  */ 
-  
- int main(void) 
- { 
-         int n, m, k; 
-  
-         for (n = '0'; n <= '9'; n++) 
-         { 
-                 for (m = '0'; m <= '9'; m++) 
-                 { 
-                         for (k = '0'; k <= '9'; k++) 
-                         { 
-                                 if (n < m && m < k) 
-                                 { 
-                                         putchar(n); 
-                                         putchar(m); 
-                                         putchar(k); 
-  
-                                         if (n != '7') 
-                                         { 
-                                         putchar(','); 
-                                         putchar(' '); 
-                                         }; 
-                                 }; 
-                         }; 
-                 }; 
-  
-         }; 
-                 putchar('\n'); 
-                 return (0); 
- }
+#include <stdio.h>
+/**
+ * main - program that prints all possible differnt combinations
+ * of thress digits.
+ *
+ * Return: 0
+ */
+int main(void)
+{
+	int i;
+	int n;
+	int j;
+
+	for (i = 48; i < 58; i++)
+	{
+		for (n = 48; n < 58; n++)
+		{
+			if (n > i)
+			{
+				for (j = 48; j < 58; j++)
+				{
+					if (j > n)
+					{
+					putchar(i);
+					putchar(n);
+					putchar(j);
+					if (i == 55 && n == 56 && j == 57)
+					{
+						break;
+					}
+					putchar('.');
+					putchar(' ');
+					}
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
